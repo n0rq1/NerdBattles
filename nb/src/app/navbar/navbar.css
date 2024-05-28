@@ -1,0 +1,71 @@
+.navbar{
+    width: 100%;
+    color: white;
+}
+
+.logo-container {
+    padding-right: 100px;
+    display: flex;
+    align-items: center;
+}
+  
+.logo-link {
+    display: inline-block;
+    text-decoration: none;
+}
+  
+.logo{
+    color: rgb(255, 127, 62);
+    font-weight: 1000;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+    font-size: calc(2.7vw + 2.7vh);
+}
+  
+.logo:hover {
+    opacity: 75%;
+    cursor: pointer;
+}
+
+.hometext{
+    font-family:'Gill Sans';
+    color: rgb(255, 255, 255);
+    font-size: calc(1.5vw + 1.5vh);
+    /*background-color: rgb(41, 41, 41);
+    border-radius: 25px;*/
+}
+
+.hometext:hover{
+    color:rgb(255, 218, 120);
+    cursor: pointer;
+    background-color: rgb(41, 41, 41);
+    border-radius: 25px; 
+}
+
+.text{
+    font-family:'Gill Sans';
+    color: rgb(255, 255, 255);
+    font-size: calc(1.5vw + 1.5vh);
+}
+
+.text:hover{
+    color:rgb(42, 98, 154);
+    cursor: pointer;
+    background-color: rgb(41, 41, 41);
+    border-radius: 25px;
+}
+
+.background {
+    background-color: rgb(29, 29, 29);
+}
+
+@media (max-width: 860px) {
+    .text{
+        pointer-events: none;
+        opacity: 0%;
+    }
+    .hometext{
+        pointer-events: none;
+        opacity: 0%;
+    }
+}
+
