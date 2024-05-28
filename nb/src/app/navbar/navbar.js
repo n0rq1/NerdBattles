@@ -1,6 +1,7 @@
 "use client";
 import "./navbar.css";
 import React, { useState } from "react";
+import Link from "next/link";
 
 export default function NavBar() {
   const [isClick, setIsClick] = useState(false);
@@ -11,30 +12,30 @@ export default function NavBar() {
 
   return (
     <>
-      <nav className="background">
+      <nav className="navbar-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-24">
           <div className="flex w-1">
             <div className="flex-shrink-0 logo-container">
-              <a href="/" className="logo-link">
-                <span className="logo">Nerd Battles</span>
-              </a>
+              <Link href="/" className="logo-link">
+                <span className="logo">Nerd_Battles</span>
+              </Link>
             </div>
           </div>
           <div className="hidden sm:flex items-center justify-center flex-grow">
             <div className="ml-4 flex items-center navbar-text-container">
-              <a href="/" className="hometext p-2">
+              <Link href="/" className="hometext p-2">
                 HOME
-              </a>
-              <a href="/battles" className="text p-2">
+              </Link>
+              <Link href="/battles" className="text p-2">
                 BATTLES
-              </a>
-              <a href="/settings" className="text p-2">
+              </Link>
+              <Link href="/settings" className="text p-2">
                 SETTINGS
-              </a>
+              </Link>
             </div>
           </div>
           <div className="username-container m-4 p-2">
-            <a href="/profile" className="username">MORGDAWG22</a>
+            <Link href="/profile" className="username">MORGDAWG22</Link>
           </div>
           <div className="md:hidden flex items-center justify-end w-1/3">
             <button
@@ -79,15 +80,15 @@ export default function NavBar() {
         {isClick && (
           <div className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-end">
-              <a href="/" className="hamburger-text p-3">
+              <Link href="/" className="hamburger-text p-3">
                 Home
-              </a>
-              <a href="/battles" className="hamburger-text p-3">
+              </Link>
+              <Link href="/battles" className="hamburger-text p-3">
                 Battles
-              </a>
-              <a href="/profile" className="hamburger-text p-3">
+              </Link>
+              <Link href="/profile" className="hamburger-text p-3">
                 Profile 
-              </a>
+              </Link>
             </div>
           </div>
         )}

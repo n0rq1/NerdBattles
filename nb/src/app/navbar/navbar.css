@@ -6,7 +6,6 @@
 }
 
 .logo-container {
-    height: calc(5vh);
     display: flex;
     align-items: center;
     position: relative;
@@ -22,7 +21,7 @@
     color: rgb(128, 136, 54);
     font-weight: 1000;
     font-family: "Inter",sans-serif;
-    font-size: calc(1vw + 1vh);
+    font-size: calc(1.5vw);
 }
   
 .logo:hover {
@@ -33,14 +32,13 @@
 .navbar-text-container{
     padding-left: .1vw;
     margin-right: 13vw;
-    height: 5vh;
 }
 
 .hometext{
     font-family: 'Inter', sans-serif;
     color: rgb(255, 255, 255);
     font-weight: bold;
-    font-size: calc(.75vw + .75vh);
+    font-size: calc(1vw);
 }
 
 .hometext:hover{
@@ -53,7 +51,7 @@
 .text{
     font-family: 'Inter', sans-serif;
     color: rgb(255, 255, 255);
-    font-size: calc(.75vw + .75vh);
+    font-size: calc(1vw);
     margin-left: calc(2vw);
     font-weight: bold;
 }
@@ -65,8 +63,8 @@
     border-radius: 20px;
 }
 
-.background {
-    background-color: rgba(0, 0, 0, 0);
+.navbar-background {
+    background-image: linear-gradient(rgb(12, 12, 12), rgb(31, 31, 31));
 }
 
 .username-container{
@@ -77,7 +75,7 @@
 .username{
     font-family: 'Inter', sans-serif;
     color: rgb(255, 255, 255);
-    font-size: calc(.75vw + .75vh);
+    font-size: calc(1vw);
     width: calc(20vw);
     align-self: flex-end;
     text-align: right;
