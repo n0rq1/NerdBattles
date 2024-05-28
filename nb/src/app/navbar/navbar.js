@@ -13,7 +13,7 @@ export default function NavBar() {
     <>
       <nav className="background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-24">
-          <div className="flex items-center justify-start w-1/3">
+          <div className="flex w-1">
             <div className="flex-shrink-0 logo-container">
               <a href="/" className="logo-link">
                 <span className="logo">Nerd Battles</span>
@@ -21,19 +21,22 @@ export default function NavBar() {
             </div>
           </div>
           <div className="hidden sm:flex items-center justify-center flex-grow">
-            <div className="ml-4 flex space-x-20">
+            <div className="ml-4 flex items-center navbar-text-container">
               <a href="/" className="hometext p-2">
                 HOME
               </a>
               <a href="/battles" className="text p-2">
                 BATTLES
               </a>
-              <a href="/profile" className="text p-2">
-                PROFILE
+              <a href="/settings" className="text p-2">
+                SETTINGS
               </a>
             </div>
           </div>
-          <div className="sm:hidden flex items-center justify-end w-1/3">
+          <div className="username-container m-4 p-2">
+            <a href="/profile" className="username">MORGDAWG22</a>
+          </div>
+          <div className="md:hidden flex items-center justify-end w-1/3">
             <button
               className="inline-flex items-center justify-center p-2 rounded-md 
               text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
@@ -74,16 +77,16 @@ export default function NavBar() {
           </div>
         </div>
         {isClick && (
-          <div className="md:hidden">
+          <div className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-end">
-              <a href="/" className="text p-3">
+              <a href="/" className="hamburger-text p-3">
                 Home
               </a>
-              <a href="/battles" className="text p-3">
+              <a href="/battles" className="hamburger-text p-3">
                 Battles
               </a>
-              <a href="/profile" className="text p-3">
-                Profile
+              <a href="/profile" className="hamburger-text p-3">
+                Profile 
               </a>
             </div>
           </div>
