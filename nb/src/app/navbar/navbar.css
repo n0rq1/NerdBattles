@@ -18,10 +18,10 @@
 }
   
 .logo{
-    color: rgb(128, 136, 54);
+    color: rgb(33, 156, 144);
     font-weight: 1000;
     font-family: "Inter",sans-serif;
-    font-size: calc(1.5vw);
+    font-size: calc(2.5vw);
 }
   
 .logo:hover {
@@ -39,6 +39,7 @@
     color: rgb(255, 255, 255);
     font-weight: bold;
     font-size: calc(1vw);
+    position: relative;
 }
 
 .hometext:hover{
@@ -49,10 +50,11 @@
 }
 
 .text{
+    position: relative;
     font-family: 'Inter', sans-serif;
     color: rgb(255, 255, 255);
     font-size: calc(1vw);
-    margin-left: calc(2vw);
+    margin-left: calc(5vw);
     font-weight: bold;
 }
 
@@ -64,17 +66,19 @@
 }
 
 .navbar-background {
-    background-image: linear-gradient(rgb(12, 12, 12), rgb(31, 31, 31));
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(31, 31, 31));
 }
 
 .username-container{
     display: flex;
     justify-content: flex-end;
+    position:absolute;
+    right:5vw;
 }
 
 .username{
     font-family: 'Inter', sans-serif;
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     font-size: calc(1vw);
     width: calc(20vw);
     align-self: flex-end;

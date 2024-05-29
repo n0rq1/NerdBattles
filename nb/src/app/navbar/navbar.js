@@ -17,7 +17,7 @@ export default function NavBar() {
           <div className="flex w-1">
             <div className="flex-shrink-0 logo-container">
               <Link href="/" className="logo-link">
-                <span className="logo">Nerd_Battles</span>
+                <span className="logo">NerdBattles</span>
               </Link>
             </div>
           </div>
