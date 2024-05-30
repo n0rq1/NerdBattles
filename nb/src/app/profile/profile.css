@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 .profile-header{
+    width: 100%;
     height: 160px;
     display: flex;
     background-color: rgb(53, 53, 53);
-    /*outline-style: solid;
-    outline-color: white;*/
     border-radius: 2vh;
+    position: relative;
 }
 
 .profile-picture{
@@ -24,6 +24,17 @@
     display:flex;
     flex-direction: column;
     font-family: 'Inter', sans-serif;
+}
+
+.profile-upper{
+    width: 100%;
+    display: flex;
+    height: calc(225px + 4vh);
+}
+.profile-lower{
+    width: 100%;
+    display: flex;
+    height: 100%;
 }
 
 .edit-profile{
@@ -55,35 +66,187 @@
     cursor: pointer;
 }
 
-/* Custom styles for the progress bar */
 .progress-bar {
     -webkit-appearance: none;
     appearance: none;
-    width: 100%;
-    height: 20px; /* Adjust the height as needed */
-    border-radius: 10px; /* Adjust the border-radius as needed */
-    background-color: #e0e0e0; /* Background color of the progress bar */
-  }
+    width: 80%;
+    height: 20px;
+    border-radius: 10px; 
+    background-color: #e0e0e0; 
+}
   
-  .progress-bar::-webkit-progress-bar {
+.progress-bar::-webkit-progress-bar {
     background-color: #e0e0e0;
     border-radius: 10px;
-  }
+}
   
-  .progress-bar::-webkit-progress-value {
+.progress-bar::-webkit-progress-value {
     background-color: #76c7c0; 
     border-radius: 10px 0 0 10px; 
-  }
+}
   
-  .progress-bar::-moz-progress-bar {
+.progress-bar::-moz-progress-bar {
     background-color: #76c7c0;
     border-radius: 10px 0 0 10px;
-  }
-  
+}
 
-@media only screen and (max-width: 768px) {
-    .profile-account-info{
-        display: none;
+.user-info-container{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(53, 53, 53);
+    border-radius: 2vh;
+}
+
+.user-info{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.user-info-text{
+    font-size: 15px;
+    color:white;
+    margin-left:10px;
+    width: 250px;
+}
+
+.info-icons{
+    height: 20px;
+    width: 20px;
+    color:white;
+}
+
+.edit-icon{
+    height: 20px;
+    width: 20px;
+    position: relative;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.calendar-thing{
+    width:45%;
+    height: 230px;
+    margin-right:100px;
+    margin-left:50px;
+    margin-top: 4vh;
+}
+
+.gametype-parent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    background-color: rgb(53, 53, 53);
+    border-radius: 2vh;
+}
+
+.gametype-container {
+    flex: 1;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+}
+
+.gametype-container:hover{
+    color:#76c7c0;
+    cursor: pointer;
+}
+
+.gametype-container:not(:last-child) {
+    border-right: 1px solid rgb(136, 136, 136);
+    padding-right: 15px; 
+    margin-right: 15px;
+}
+
+
+.navbar-text-container .navbar-text:not(:last-child) {
+    border-right: 1px solid rgb(136, 136, 136);
+    padding-right: 15px; 
+    margin-right: 15px;
+}
+
+.cards-container {
+    margin-left: 5vw;
+    margin-top: 3vh;
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2vw;
+}
+
+.card {
+    background-color: rgb(53, 53, 53);
+    width: 20vw;
+    height: 50vh;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.card:hover{
+    box-shadow: 0 0 20px 0 #dfdfdf; 
+}
+
+.card-header {
+    color: rgb(33, 156, 144);
+    font-family: 'Inter', sans-serif;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.record-tracker-container{
+    font-family: 'Inter', sans-serif;
+    font-size: 2vw;
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.record-tracker{
+    margin-left:.5vw;
+    color: rgb(131, 128, 128);
+}
+
+@media only screen and (max-width: 1366px) {
+    .profile-header{
+        width: 100%;
+    }
+    .user-info-container{
+        width: 100%;
+    }
+    .calendar-thing{
+        width:90%;
+        margin-left:5%;
+        margin-right:0px;
+    }
+    .profile-upper{
+        flex-direction: column;
+        height: calc(475px + 4vh);
     }
 }
 
+@media only screen and (max-width: 600px) {
+    .user-info-container{
+        display: none;
+    }
+
+}
