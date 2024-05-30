@@ -3,15 +3,11 @@ import NavBar from "../navbar/navbar"
 
 export default function Profile(){
     return (
-        <>
-            <NavBar/>
+        <body>
             <div className="background">
-                <div>
-                    <a>
-                        Settings
-                    </a>
-                </div>
+                <NavBar/>
             </div>
-        </>
+        </body>
+
     )
 }

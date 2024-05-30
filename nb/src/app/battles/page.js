@@ -3,15 +3,11 @@ import NavBar from "../navbar/navbar"
 
 export default function Battles(){
     return (
-        <>
-            <NavBar/>
+        <body>
             <div className="background">
-                <div>
-                    <a>
-                        Battles
-                    </a>
-                </div>
+                <NavBar/>
             </div>
-        </>
+        </body>
+
     )
 }

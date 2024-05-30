@@ -1,6 +1,7 @@
 "use client";
 import "./navbar.css";
 import React, { useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 export default function NavBar() {
@@ -12,36 +13,33 @@ export default function NavBar() {
 
   return (
     <>
-      <nav className="navbar-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-24">
-          <div className="flex w-1">
-            <div className="flex-shrink-0 logo-container">
-              <Link href="/" className="logo-link">
-                <span className="logo">NerdBattles</span>
-              </Link>
-            </div>
-          </div>
-          <div className="hidden sm:flex items-center justify-center flex-grow">
-            <div className="ml-4 flex items-center navbar-text-container">
-              <Link href="/" className="hometext p-2">
-                HOME
-              </Link>
-              <Link href="/battles" className="text p-2">
-                BATTLES
-              </Link>
-              <Link href="/settings" className="text p-2">
-                SETTINGS
-              </Link>
-            </div>
-          </div>
-          <div className="username-container m-4 p-2">
-            <Link href="/profile" className="username">MORGDAWG22</Link>
-          </div>
-          <div className="md:hidden flex items-center justify-end w-1/3">
+      <nav className="navbar"> 
+        <div className="logo-container">
+          <a href="/" className="logo">
+            NerdBattles
+          </a>
+        </div>
+        <div className="navbar-text-container">
+          <Link href="/" className="navbar-text">
+            Home
+          </Link>
+          <Link href="/battles" className="navbar-text">
+            Battles
+          </Link>
+          <Link href="/settings" className="navbar-text">
+            Settings
+          </Link>
+        </div>
+        <div className="username-container">
+          <Link href="/profile" className="username-text">
+            MorgDawg22
+          </Link>
+        </div>
+        <div className="md:hidden flex items-center justify-end w-1/3">
             <button
-              className="inline-flex items-center justify-center p-2 rounded-md 
+              className="hamburger inline-flex items-center justify-center p-2 rounded-md 
               text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-              onClick={toggleNavbar}
+              onClick={toggleNavbar} 
             >
               {isClick ? (
                 <svg
@@ -73,26 +71,10 @@ export default function NavBar() {
                     d="M4 6h16M4 12h16m-7 6h7"
                   />
                 </svg>
-              )}
+              )}              
             </button>
-          </div>
         </div>
-        {isClick && (
-          <div className="sm:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-end">
-              <Link href="/" className="hamburger-text p-3">
-                Home
-              </Link>
-              <Link href="/battles" className="hamburger-text p-3">
-                Battles
-              </Link>
-              <Link href="/profile" className="hamburger-text p-3">
-                Profile 
-              </Link>
-            </div>
-          </div>
-        )}
-      </nav>
-    </>
-  );
+    </nav>
+  </>
+);
 }

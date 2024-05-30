@@ -1,93 +1,81 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
-.navbar{
-    width: 100%;
-    color: white;
-}
-
-.logo-container {
+.navbar {
+    background-image: linear-gradient(rgb(30, 30, 30), rgb(20, 20, 20));
     display: flex;
     align-items: center;
-    position: relative;
-    z-index: 1;
+    justify-content: center;
+    height: 10vh;
+    width: 100%;
+    outline-style: solid;
+    outline-color: black;
 }
-  
-.logo-link {
-    display: inline-block;
-    text-decoration: none;
+
+.logo-container{
+    position: absolute;
+    left: 5vw;
 }
-  
+
 .logo{
-    color: rgb(33, 156, 144);
-    font-weight: 1000;
-    font-family: "Inter",sans-serif;
-    font-size: calc(2.5vw);
+    color: rgb(214, 173, 252);
+    font-size: 30px;
+    font-family: 'Inter';
 }
-  
-.logo:hover {
-    opacity: 50%;
+
+.logo:hover{
     cursor: pointer;
+    opacity: 75%;
 }
 
 .navbar-text-container{
-    padding-left: .1vw;
-    margin-right: 13vw;
+    position: absolute;
+    left: calc(5vw + 250px);
+    justify-content: space-between;
 }
 
-.hometext{
+.navbar-text{
+    padding:10px;
     font-family: 'Inter', sans-serif;
     color: rgb(255, 255, 255);
     font-weight: bold;
-    font-size: calc(1vw);
-    position: relative;
+    font-size: 20px;
+    margin-right: 30px;
 }
 
-.hometext:hover{
-    color:rgb(255, 191, 0);
+.navbar-text:hover{
+    color:rgb(151, 217, 255);
     cursor: pointer;
     background-color: rgb(41, 41, 41);
     border-radius: 20px; 
 }
 
-.text{
-    position: relative;
-    font-family: 'Inter', sans-serif;
-    color: rgb(255, 255, 255);
-    font-size: calc(1vw);
-    margin-left: calc(5vw);
-    font-weight: bold;
-}
-
-.text:hover{
-    color:rgb(209, 3, 99);
+.special{
+    color:rgb(151, 217, 255);
     cursor: pointer;
     background-color: rgb(41, 41, 41);
-    border-radius: 20px;
-}
-
-.navbar-background {
-    background-image: linear-gradient(rgb(0, 0, 0), rgb(31, 31, 31));
+    border-radius: 20px;  
 }
 
 .username-container{
-    display: flex;
-    justify-content: flex-end;
-    position:absolute;
+    position: absolute;
+    right:5vw;
+    display:block;
+}
+
+.username-text{
+    font-size: 20px;
+    font-family: 'Inter';
+}
+
+.hamburger{
+    position: absolute;
     right:5vw;
 }
 
-.username{
-    font-family: 'Inter', sans-serif;
-    color: #ffffff;
-    font-size: calc(1vw);
-    width: calc(20vw);
-    align-self: flex-end;
-    text-align: right;
-}
-
-.username:hover{
-    color:rgb(42, 98, 154);
-    cursor: pointer;
+.hamburger:focus{
+    outline: none;
+    box-shadow: 0 0 0 2px;
+    box-shadow: inset 0 0 0 2px;
 }
 
 .hamburger-text{
@@ -105,20 +93,55 @@
     border-radius: 20px;
 }
 
-@media (max-width: 768px) {
-    .text {
-        display: none;
+.hamburger-dropdown {
+    position: absolute;
+    top: 100%; /* Position it right below the navbar */
+    right: 0; /* Align it to the right side */
+    background-color: #333; /* Adjust background color as needed */
+    width: 100%; /* Make it full width or adjust as needed */
+    z-index: 10; /* Ensure it appears above other elements */
+}
+  
+.hamburger-dropdown a {
+    display: block;
+    padding: 10px;
+    text-align: right;
+    text-decoration: none;
+    color: white;
+}
+  
+.hamburger-dropdown a:hover {
+    background-color: #444;
+}
+
+
+@media only screen and (max-height: 700px) {
+    .navbar{
+        height: 70px;
     }
-    .logo-container{
-        height: 20vh;
-    }
-    .logo{
-        font-size: 30px;
-    }
-    .hometext {
-        display: none;
-    }
-    .username {
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar-text-container{
         display: none;
     }
 }
+
+@media only screen and (max-width: 768px) {
+    .navbar-text-container{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .username-container{
+        display:none;
+    }
+}
+
+@media only screen and (max-height: 400px) {
+    .navbar{
+        height: 60px;
+    }
+}
+
