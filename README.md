@@ -1,36 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 style="color: black;text-align:center">Nerd Battles</h1>
 
-## Getting Started
+## Project Summary
+My app is a web app that is player vs player in various games such as Type Battle (type racing), Code Battle (first to solve the LeetCode-style problem wins), Debug Battle (first to find the bug wins), and Decrypt Battle (the first to decipher the string wins). Built using [Next.js](https://nextjs.org/), the app provides a dynamic and responsive experience for users. Each game mode emphasizes different skills: Type Battle focuses on typing speed and accuracy, Code Battle tests problem-solving abilities, Debug Battle challenges debugging skills, and Decrypt Battle requires cryptographic proficiency. Users can compete against friends or other players globally, and improve their skills through practice and competition. The platform is designed to be engaging and educational, making learning and practicing these skills fun and interactive.
 
-First, run the development server:
+## Game Descriptions
+<code style="color: blue;font-size: 20px">Code Battles</code>
+- Race to solve coding problems similar to those on LeetCode.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<code style="color: blue;font-size: 20px">Debug Battles</code>
+- Find and fix bugs in the provided code as quickly as possible.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<code style="color: blue;font-size: 20px">Decrypt Battles</code>
+- Decipher encoded strings before your opponent does.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+<code style="color: blue;font-size: 20px">Type Battles</code>
+- Compete to see who can type a passage the fastest.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

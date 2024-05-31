@@ -32,6 +32,7 @@ body{
 @media only screen and (max-width: 1366px) {
   .page-body{
     width:90%;
+    height: 160px;
     margin-left:5%;
     margin-right:0px;
   }

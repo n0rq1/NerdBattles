@@ -42,6 +42,9 @@ export default function Profile(){
                     </div>
                     <div className="calendar-thing">
                         <div className="profile-header">
+                            <a>
+                                Calendar Thing
+                            </a>
                         </div>
                         <div className="user-info-container gametype-parent mt-1">
                             <div className="gametype-container">
