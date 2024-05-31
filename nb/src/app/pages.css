@@ -2,8 +2,11 @@ html,
 body {
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.9),rgba(0,0,0,0.9)), 
+    url('/grid.png');
   background-size: cover;
+  background-position: center;
   margin: 0;
   padding: 0;
 }
@@ -18,19 +21,11 @@ body{
   box-sizing: border-box;
 }
 
-.background {
-  flex-grow: 1;
-  height: 100%;
-  width: 100%;
-  font-size: 20px;
-  display: flex;
-  flex-direction: column;
-}
 
 .page-body{
   width:45%;
   height: 230px;
-  margin-top: 4vh;
+  margin-top: 3vh;
   margin-left: 100px;
 }
 
@@ -40,8 +35,4 @@ body{
     margin-left:5%;
     margin-right:0px;
   }
-}
-
-@media only screen and (max-height: 2000px) {
-
 }

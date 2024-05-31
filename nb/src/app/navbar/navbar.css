@@ -121,16 +121,9 @@
     margin-right: 15px;
 }
 
-
 @media only screen and (max-height: 700px) {
     .navbar{
         height: 70px;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .navbar-text-container{
-        display: none;
     }
 }
 
@@ -138,23 +131,29 @@
     .navbar-text-container{
         display: none;
     }
-}
-
-@media only screen and (max-width: 800px) {
     .username-container{
         display:none;
     }
 }
 
-@media only screen and (max-height: 400px) {
+
+/*for iphone 14 pro max*/
+@media only screen and (max-width: 450px) {
+    .hamburger{
+        right:10vw;
+    }
     .navbar{
+        width: 100%;
         height: 60px;
     }
-}
-
-@media only screen and (max-width: 500px) {
     .logo{
-        font-size:20px;
+        font-size: 20px;
+    }
+    .navbar-text-container{
+        display: none;
+    }
+    .username-container{
+        display: none;
     }
 }
 

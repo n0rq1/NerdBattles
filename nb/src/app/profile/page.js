@@ -46,22 +46,22 @@ export default function Profile(){
                         <div className="user-info-container gametype-parent mt-1">
                             <div className="gametype-container">
                                 <a>
-                                    Code
+                                    CODE
                                 </a>
                             </div>
                             <div className="gametype-container">
                                 <a>
-                                    Debug
+                                    DEBUG
                                 </a>
                             </div>
                             <div className="gametype-container">
                                 <a>
-                                    Decrypt
+                                    DECRYPT 
                                 </a>
                             </div>
                             <div className="gametype-container">
                                 <a>
-                                    Type
+                                    TYPE
                                 </a>
                             </div>
                         </div>
@@ -71,7 +71,7 @@ export default function Profile(){
                 <div className="cards-container">
                     <div className="card">
                         <div className="card-header">
-                            <a>
+                            <a className="card-header-text">
                                 CODE BATTLES
                             </a>
                         </div>
@@ -79,20 +79,20 @@ export default function Profile(){
                             <a className="record-tracker">
                                 Wins
                             </a>
-                            <a style={{fontSize:'1.5vw', marginLeft:'.5vw'}}>
+                            <a style={{fontSize:'15px', marginLeft:'1vw'}}>
                                 8
                             </a>
                             <a className="record-tracker">
                                 Losses
                             </a>
-                            <a style={{fontSize:'1.5vw', marginLeft:'.5vw'}}>
+                            <a style={{fontSize:'15px', marginLeft:'1vw'}}>
                                 1
                             </a>
                         </div>
                     </div>
                     <div className="card">
                         <div className="card-header">
-                            <a>
+                            <a className="card-header-text">
                                 DEBUGGER BATTLES
                             </a>
                         </div>
@@ -100,20 +100,20 @@ export default function Profile(){
                             <a className="record-tracker">
                                 Wins
                             </a>
-                            <a style={{fontSize:'1.5vw', marginLeft:'.5vw'}}>
+                            <a style={{fontSize:'15px', marginLeft:'1vw'}}>
                                 8
                             </a>
                             <a className="record-tracker">
                                 Losses
                             </a>
-                            <a style={{fontSize:'1.5vw', marginLeft:'.5vw'}}>
+                            <a style={{fontSize:'15px', marginLeft:'1vw'}}>
                                 1
                             </a>
                         </div>                        
                     </div>  
                     <div className="card">
                         <div className="card-header">
-                            <a>
+                            <a className="card-header-text">
                                 DECRYPT BATTLES
                             </a>
                         </div>
@@ -121,20 +121,20 @@ export default function Profile(){
                             <a className="record-tracker">
                                 Wins 
                             </a>
-                            <a style={{fontSize:'1.5vw', marginLeft:'.5vw'}}>
+                            <a style={{fontSize:'15px', marginLeft:'1vw'}}>
                                 8
                             </a>
                             <a className="record-tracker">
                                 Losses
                             </a>
-                            <a style={{fontSize:'1.5vw', marginLeft:'.5vw'}}>
+                            <a style={{fontSize:'15px', marginLeft:'1vw'}}>
                                 1
                             </a>
                         </div>                        
                     </div>                    
                     <div className="card">
                         <div className="card-header">
-                            <a>
+                            <a className="card-header-text">
                                 TYPE BATTLES
                             </a>
                         </div>
@@ -142,23 +142,21 @@ export default function Profile(){
                             <a className="record-tracker">
                                 Wins
                             </a>
-                            <a style={{fontSize:'1.5vw', marginLeft:'.5vw'}}>
+                            <a style={{fontSize:'15px', marginLeft:'1vw'}}>
                                 8
                             </a>
                             <a className="record-tracker">
                                 Losses
                             </a>
-                            <a style={{fontSize:'1.5vw', marginLeft:'.5vw'}}>
+                            <a style={{fontSize:'15px', marginLeft:'1vw'}}>
                                 1
                             </a>
                             <a className="record-tracker">
                                 Average WPM
                             </a>
-                            <a style={{fontSize:'1.5vw', marginLeft:'.5vw'}}>
+                            <a style={{fontSize:'15px', marginLeft:'1vw'}}>
                                 69
                             </a>
-                            
-                          
                         </div>                        
                     </div>                  
                     </div>
