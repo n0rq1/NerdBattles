@@ -1,8 +1,57 @@
+"use client";
 import "../pages.css";
 import "./profile.css";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import NavBar from "../navbar/navbar";
+import { useEffect,useState } from "react";
+import {useRouter} from "next/navigation";
 
 export default function Profile(){
+    const [user,setUser] = useState(null);
+    const [uname,setUsername] = useState(null);
+    const [userData, setUserData] = useState(null);
+    const [error, setError] = useState(null);
+
+    const supabase = createClientComponentClient();
+
+    const router = useRouter();
+
+    useEffect(() => {
+        async function getUserID(){
+            const{data: {user}} = await supabase.auth.getUser();
+            if(user){
+              setUser(user.id);
+            }
+        }
+        getUserID();
+      }, []);
+    
+      useEffect(() => {
+        async function getUserInfo() {
+          if (user) {
+            const { data, error } = await supabase
+              .from('users')
+              .select()
+              .eq('uid', user);
+            if (error) {
+              setError(error);
+            }
+            if (data) {
+              setUserData(data[0]);
+              setUsername(data[0].username);
+            }
+          }
+        }
+        getUserInfo();
+    }, [user]);
+
+    const handleSignOut = async () =>{
+        await supabase.auth.signOut();
+        router.push("/");
+        router.refresh();
+        setUser(null);
+    }
+    
     return (
         <body>
             <NavBar/>
@@ -12,20 +61,37 @@ export default function Profile(){
                         <div className="profile-header">
                             <img src="/midair.jpeg" className="profile-picture"/>
                             <div className="profile-account-info">
-                                <a style={{color: 'white', fontWeight:'bold'}}>
-                                    Username-Here
+                                <a className="uname-text">
+                                    {user ? uname : "Login"}
                                 </a>
                                 <progress value={.50} className="progress-bar"/>
                                 <a style={{color: 'white'}}>
-                                    69
+                                    {userData ? userData.level : 0}
                                 </a>
                                 <div className="links-container">
-                                    <img src="/github.png" className="links-icon"/>
-                                    <img src="/linkedin.png" className="links-icon"/>
-                                    <img src="/leetcode.png" className="links-icon"/>
+                                    <img
+                                        onClick={() => window.location.href = userData.github_link}
+                                        src="/github.png"
+                                        className="links-icon"
+                                    />
+                                    <img
+                                        onClick={() => window.location.href = userData.linkedin_link}
+                                        src="/linkedin.png"
+                                        className="links-icon"
+                                    />
+                                    <img 
+                                        onClick={() => window.location.href = userData.leetcode_link}
+                                        src="/leetcode.png"
+                                        className="links-icon"
+                                    />
                                 </div>
                             </div>
                             <img src="/pencil.svg" className="edit-icon mt-1"/>
+                            <button onClick={handleSignOut} className="logout-button">
+                                <a className="button-text">
+                                    Logout
+                                </a>
+                            </button>
                         </div>
                         <div className="user-info-container mt-1">
                             <div className="user-info">

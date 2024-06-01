@@ -1,15 +1,51 @@
 "use client";
 import "./navbar.css";
-import React, { useState } from "react";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { usePathname } from "next/navigation";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
 export default function NavBar() {
   const [isClick, setIsClick] = useState(false);
+  const [user,setUser] = useState(null);
+  const [uname,setUsername] = useState(null);
+  const [userData, setUserData] = useState(null);
+  const [error, setError] = useState(null);
+
+  const supabase = createClientComponentClient();
 
   const toggleNavbar = () => {
     setIsClick(!isClick);
   };
+
+  useEffect(() => {
+    async function getUserID(){
+        const{data: {user}} = await supabase.auth.getUser();
+        if(user){
+          setUser(user.id);
+        }
+    }
+    getUserID();
+  }, []);
+
+  useEffect(() => {
+    async function getUserInfo() {
+      if (user) {
+        const { data, error } = await supabase
+          .from('users')
+          .select()
+          .eq('uid', user);
+        if (error) {
+          setError(error);
+        }
+        if (data) {
+          setUserData(data[0]);
+          setUsername(data[0].username);
+        }
+      }
+    }
+    getUserInfo();
+  }, [user]);
 
   return (
     <>
@@ -31,8 +67,8 @@ export default function NavBar() {
           </Link>
         </div>
         <div className="username-container">
-          <Link href="/profile" className="username-text">
-            Username-Here
+          <Link href={user ? "/profile" : "/login"} className="username-text">
+            {user ? uname : "Login"}
           </Link>
         </div>
         <div className="md:hidden flex items-center justify-end w-1/3">
