@@ -13,7 +13,7 @@ export default function Profile(){
                             <img src="/midair.jpeg" className="profile-picture"/>
                             <div className="profile-account-info">
                                 <a style={{color: 'white', fontWeight:'bold'}}>
-                                    MorgDawg22
+                                    Username-Here
                                 </a>
                                 <progress value={.50} className="progress-bar"/>
                                 <a style={{color: 'white'}}>
@@ -31,11 +31,11 @@ export default function Profile(){
                             <div className="user-info">
                                 <img src="/location-pin.png" className="info-icons"/>
                                 <a className="user-info-text" style={{width:'250px'}}>
-                                    California, United States
+                                    Location Here
                                 </a>
                                 <img src="/school.png" className="info-icons"/>
                                 <a className="user-info-text">
-                                    California State University, Chico
+                                    School Name Here
                                 </a>
                             </div>
                         </div>
@@ -83,13 +83,13 @@ export default function Profile(){
                                 Wins
                             </a>
                             <a style={{fontSize:'15px', marginLeft:'1vw'}}>
-                                8
+                                0
                             </a>
                             <a className="record-tracker">
                                 Losses
                             </a>
                             <a style={{fontSize:'15px', marginLeft:'1vw'}}>
-                                1
+                                0
                             </a>
                         </div>
                     </div>
@@ -104,13 +104,13 @@ export default function Profile(){
                                 Wins
                             </a>
                             <a style={{fontSize:'15px', marginLeft:'1vw'}}>
-                                8
+                                0
                             </a>
                             <a className="record-tracker">
                                 Losses
                             </a>
                             <a style={{fontSize:'15px', marginLeft:'1vw'}}>
-                                1
+                                0
                             </a>
                         </div>                        
                     </div>  
@@ -125,13 +125,13 @@ export default function Profile(){
                                 Wins 
                             </a>
                             <a style={{fontSize:'15px', marginLeft:'1vw'}}>
-                                8
+                                0
                             </a>
                             <a className="record-tracker">
                                 Losses
                             </a>
                             <a style={{fontSize:'15px', marginLeft:'1vw'}}>
-                                1
+                                0
                             </a>
                         </div>                        
                     </div>                    
@@ -146,13 +146,13 @@ export default function Profile(){
                                 Wins
                             </a>
                             <a style={{fontSize:'15px', marginLeft:'1vw'}}>
-                                8
+                                0
                             </a>
                             <a className="record-tracker">
                                 Losses
                             </a>
                             <a style={{fontSize:'15px', marginLeft:'1vw'}}>
-                                1
+                                0
                             </a>
                             <a className="record-tracker">
                                 Average WPM

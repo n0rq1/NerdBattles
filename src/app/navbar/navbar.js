@@ -32,7 +32,7 @@ export default function NavBar() {
         </div>
         <div className="username-container">
           <Link href="/profile" className="username-text">
-            MorgDawg22
+            Username-Here
           </Link>
         </div>
         <div className="md:hidden flex items-center justify-end w-1/3">
