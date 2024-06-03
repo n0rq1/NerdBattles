@@ -53,10 +53,11 @@ export default function Login(){
                 console.log("Email in use")
             } else {
                 signUp();
+                console.log(user);
                 const { error } = await supabase
                     .from('users')
                     .insert({
-                        uid: '00e1ca0d-df71-4f6a-a788-58774ed7b71a',
+                        uid: user.id,
                         username: username,
                         email: email,
                         linkedin_link: linkedin_link,
@@ -77,7 +78,6 @@ export default function Login(){
                     username (user input)
                     links (user input)
                 */
-                console.output(user);
             }
         } catch (error) {
             console.error("Unexpected error: ", error);
