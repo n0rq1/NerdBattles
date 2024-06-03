@@ -19,7 +19,7 @@ export default function Login(){
     const [userId, setUserId] = useState(null);
 
     const [password,setPassword] = useState('');
-    const [user,setUser] = useState(null);
+    const [currentUser,setCurrentUser] = useState(null);
     const [emailInUse,setEmailInUse] = useState(1);
 
     const router = useRouter();
@@ -28,8 +28,8 @@ export default function Login(){
 
     useEffect(() => {
         async function getUser(){
-            const{data: {user}} = await supabase.auth.getUser();
-            setUser(user);
+            const{data: {currentUser}} = await supabase.auth.getUser();
+            setUser(currentUser);
         }
         getUser();
     }, []);
@@ -54,21 +54,6 @@ export default function Login(){
                 console.log("Email in use")
             } else {
                 signUp();
-
-                const { error } = await supabase
-                    .from('users')
-                    .insert({
-                        uid: userId,
-                        username: username,
-                        email: email,
-                        linkedin_link: linkedin_link,
-                        github_link: github_link,
-                        leetcode_link: leetcode_link,
-                        school_name: school_name,
-                    })
-                if(error){
-                    console.log(error);
-                }
             }
         } catch (error) {
             console.error("Unexpected error: ", error);
@@ -85,13 +70,25 @@ export default function Login(){
             }
         })
 
-        console.log(data);
         if(data){
-            setUser(data.user);
-            /*
-                Wait until the user has verified?? - figure this out Later
-                For now the work around is to verify, refresh, sign in
-            */
+            setCurrentUser(data.user);
+            
+            /* Now the user has signed up */
+            const { error } = await supabase
+            .from('users')
+            .insert({
+                uid: data.user.id,
+                username: username,
+                email: email,
+                linkedin_link: linkedin_link,
+                github_link: github_link,
+                leetcode_link: leetcode_link,
+                school_name: school_name,
+            })
+            if(error){
+                console.log(error);
+            }
+
             router.refresh();
         }
         setEmail('');
