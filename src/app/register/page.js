@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation";
 export default function Login(){
     /* vars we are inserting into the users table */
     const [email,setEmail] = useState('');
-    const [username,setUsername] = useState('');
+    const [username,setUsername] = useState('ssss');
     const [leetcode_link,setLC] = useState(null);
     const [github_link, setGH] = useState(null);
     const [linkedin_link, setLI] = useState(null);
@@ -56,7 +56,7 @@ export default function Login(){
                 const { error } = await supabase
                     .from('users')
                     .insert({
-                        uid: '00e0ca0d-df71-4f6a-a788-58774ed7b71a',
+                        uid: '00e1ca0d-df71-4f6a-a788-58774ed7b71a',
                         username: username,
                         email: email,
                         linkedin_link: linkedin_link,

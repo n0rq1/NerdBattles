@@ -105,7 +105,7 @@ export default function Login(){
                         Sign In
                     </button>
                     <a className="login-text">
-                        Don't have an account?
+                        Don&apos;t have an account?
                     </a>
                     <a className="login-signup"onClick={handleSignUpButton}>
                         Sign Up!
