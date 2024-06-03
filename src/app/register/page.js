@@ -16,6 +16,7 @@ export default function Login(){
     const [github_link, setGH] = useState(null);
     const [linkedin_link, setLI] = useState(null);
     const [school_name,setSchool] = useState(null);
+    const [userId, setUserId] = useState(null);
 
     const [password,setPassword] = useState('');
     const [user,setUser] = useState(null);
@@ -53,11 +54,11 @@ export default function Login(){
                 console.log("Email in use")
             } else {
                 signUp();
-                console.log(user);
+
                 const { error } = await supabase
                     .from('users')
                     .insert({
-                        uid: user.id,
+                        uid: userId,
                         username: username,
                         email: email,
                         linkedin_link: linkedin_link,
@@ -68,16 +69,6 @@ export default function Login(){
                 if(error){
                     console.log(error);
                 }
-                /*
-                now the user signed up with auth 
-                user should now have uid
-                take the uid and email and insert into users table
-                in total we will insert:
-                    uid (we get this from auth)
-                    email (we already got this)
-                    username (user input)
-                    links (user input)
-                */
             }
         } catch (error) {
             console.error("Unexpected error: ", error);
@@ -89,11 +80,12 @@ export default function Login(){
         const {data,error} = await supabase.auth.signUp({
             email,
             password,
-            //options: {
-                //emailRedirectTo: `${location.origin}/auth/callback`
-            //}
+            options: {
+                emailRedirectTo: `${location.origin}/auth/callback`
+            }
         })
 
+        console.log(data);
         if(data){
             setUser(data.user);
             /*
