@@ -59,12 +59,12 @@ export default function Profile() {
 
     return (
         <div>
-            <NavBar />
+            <NavBar/>
             <div className="background">
                 <div className="profile-upper">
                     <div className="page-body">
                         <div className="profile-header">
-                            <img src="/midair.jpeg" className="profile-picture" alt="Profile" />
+                            <img src="/defaultuser.png" className="profile-picture" alt="Profile" />
                             <div className="profile-account-info">
                                 <a className="uname-text">
                                     {user ? uname : "Login"}
@@ -75,7 +75,7 @@ export default function Profile() {
                                 </a>
                                 <div className="links-container">
                                     <img
-                                        onClick={() => window.location.href = userData.github_link}
+                                        onClick={ () => window.location.href = userData.github_link }
                                         src="/github.png"
                                         className="links-icon"
                                         alt="GitHub"
