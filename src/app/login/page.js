@@ -1,6 +1,8 @@
 "use client";
 import "../pages.css";
+import "./login.css";
 import NavBar from "../navbar/navbar";
+import { Input } from "@material-tailwind/react";
 
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useEffect, useState } from "react";
@@ -23,12 +25,12 @@ export default function Login(){
         getUser();
     }, []);
 
-    if(user){
-        console.log(user.email);
+    const handleSignUpButton = async => {
+        router.push("/register")
     }
 
     const handleSignUp = async () => {
-        const res = await supabase.auth.signUp({
+        const {data,error} = await supabase.auth.signUp({
             email,
             password,
             options: {
@@ -43,36 +45,71 @@ export default function Login(){
     }
 
     const handleSignIn = async () =>{
-        const res = await supabase.auth.signInWithPassword({
+        const {data,error} = await supabase.auth.signInWithPassword({
             email,
             password
         })
-        setUser(res);
-        router.push("/profile");
-        router.refresh();
-        setEmail('');
-        setPassword('');
+
+        if (error) {
+            console.error("Error signing in:", error.message);
+            return;
+        }
+
+        if (data.user) {
+            setUser(data.user);
+            router.push("/profile");
+            router.refresh();
+            setEmail('');
+            setPassword('');
+        }
     }
     
     return (
         <body>
             <NavBar/>
-            <div className="background">
-                <div className="page-body">
+            <div className="login-page">
+                <div className="login-container">
                     <input
+                        style={{
+                            border: '1px solid black',
+                            marginTop:'20%',
+                            width:'40%',
+                            color:'black',
+                            backgroundColor:'white'
+                        }}
+                        placeholder="Email..."
                         type="email"
                         name="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
                     <input 
+                        style={{
+                            border: '1px solid black',
+                            marginTop:'3%',
+                            width:'40%',
+                            color:'black',
+                            backgroundColor:'white'
+                        }}
+                        variant="standard"
+                        placeholder="Password..."
                         type="password"
                         name="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                    <button onClick={handleSignUp}>Sign Up</button>
-                    <button onClick={handleSignIn}>Sign In</button>
+                    <button 
+                        className="login-text login-button mt-3"
+                        onClick={handleSignIn}
+                    >
+                        Sign In
+                    </button>
+                    <a className="login-text">
+                        Don't have an account?
+                    </a>
+                    <a className="login-signup"onClick={handleSignUpButton}>
+                        Sign Up!
+                    </a>
                 </div>
             </div>
         </body>

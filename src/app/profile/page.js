@@ -149,13 +149,13 @@ export default function Profile(){
                                 Wins
                             </a>
                             <a style={{fontSize:'15px', marginLeft:'1vw'}}>
-                                0
+                                {userData ? userData.code_wins : "N/A"}
                             </a>
                             <a className="record-tracker">
                                 Losses
                             </a>
                             <a style={{fontSize:'15px', marginLeft:'1vw'}}>
-                                0
+                                {userData ? userData.code_losses : "N/A"}
                             </a>
                         </div>
                     </div>
@@ -170,13 +170,13 @@ export default function Profile(){
                                 Wins
                             </a>
                             <a style={{fontSize:'15px', marginLeft:'1vw'}}>
-                                0
+                                {userData ? userData.debug_wins : "N/A"}
                             </a>
                             <a className="record-tracker">
                                 Losses
                             </a>
                             <a style={{fontSize:'15px', marginLeft:'1vw'}}>
-                                0
+                                {userData ? userData.debug_losses : "N/A"}
                             </a>
                         </div>                        
                     </div>  
@@ -191,13 +191,13 @@ export default function Profile(){
                                 Wins 
                             </a>
                             <a style={{fontSize:'15px', marginLeft:'1vw'}}>
-                                0
+                                {userData ? userData.decrypt_wins : "N/A"}
                             </a>
                             <a className="record-tracker">
                                 Losses
                             </a>
                             <a style={{fontSize:'15px', marginLeft:'1vw'}}>
-                                0
+                                {userData ? userData.decrypt_losses : "N/A"}
                             </a>
                         </div>                        
                     </div>                    
@@ -212,13 +212,13 @@ export default function Profile(){
                                 Wins
                             </a>
                             <a style={{fontSize:'15px', marginLeft:'1vw'}}>
-                                0
+                                {userData ? userData.code_wins : "N/A"}
                             </a>
                             <a className="record-tracker">
                                 Losses
                             </a>
                             <a style={{fontSize:'15px', marginLeft:'1vw'}}>
-                                0
+                                {userData ? userData.type_losses : "N/A"}
                             </a>
                             <a className="record-tracker">
                                 Average WPM
