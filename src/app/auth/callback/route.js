@@ -1,15 +1,29 @@
-import {createRouteHandlerClient} from '@supabase/auth-helpers-nextjs';
-import {cookies} from 'next/headers';
-import {NextResponse} from 'next/server';
+// pages/auth/callback.js
 
-export async function GET(request){
-    const requestUrl = new URL(request.url);
-    const code = requestUrl.searchParams.get('code');
-    if (code){
-        const cookieStore = cookies();
-        const supabase = createRouteHandlerClient({cookies: () => cookieStore});
-        await supabase.auth.exchangeCodeForSession(code);
-    }
+import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
+import { cookies } from 'next/headers';
+import { NextResponse } from 'next/server';
 
-    return NextResponse.redirect(requestUrl.origin);
+export async function getServerSideProps({ req }) {
+  const requestUrl = new URL(req.url);
+  const code = requestUrl.searchParams.get('code');
+  
+  if (code) {
+    const cookieStore = cookies({ req });
+    const supabase = createRouteHandlerClient({ cookies: () => cookieStore });
+    await supabase.auth.exchangeCodeForSession(code);
+  }
+
+  return {
+    redirect: {
+      destination: requestUrl.origin,
+      permanent: false,
+    },
+  };
+}
+
+export default function Callback() {
+  // This component is only needed to export getServerSideProps
+  // You can leave it empty or add any content you want
+  return null;
 }
