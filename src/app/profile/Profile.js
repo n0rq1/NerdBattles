@@ -53,6 +53,10 @@ export default function Profile() {
         setUser(null);
     }
 
+    const handleLogin = async () => {
+        router.push("/login");
+    }
+
     return (
         <div>
             <NavBar />
@@ -91,9 +95,9 @@ export default function Profile() {
                                 </div>
                             </div>
                             <img src="/pencil.svg" className="edit-icon mt-1" alt="Edit" />
-                            <button onClick={handleSignOut} className="logout-button">
+                            <button onClick={user ? handleSignOut : handleLogin } className="logout-button">
                                 <a className="button-text">
-                                    Logout
+                                    {user ? "Logout" : "Login"}
                                 </a>
                             </button>
                         </div>
