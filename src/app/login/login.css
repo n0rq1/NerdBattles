@@ -4,6 +4,7 @@
 }
 
 .login-container {
+    box-shadow: 5px 5px 5px rgb(223, 223, 223);
     width: 40vw;
     height: 50vh;
     background-color: rgb(36, 36, 36);
@@ -63,14 +64,14 @@
 
 @media only screen and (max-width: 600px){
     .login-container{
-        width:80vw;
-        height: 100vw;
+        width:90vw;
+        height: 90vw;
     }
 }
 
 @media only screen and (max-height: 600px){
     .login-container{
-        width:80vw;
+        width:60vw;
         height: 80vh;
     }
 }

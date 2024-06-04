@@ -23,26 +23,11 @@ export default function NavBar() {
       <nav className="navbar"> 
         <div className="logo-container">
           <a href="/" className="logo">
-            NerdBattles
+            nerd battles
           </a>
         </div>
-        <div className="navbar-text-container">
-          <Link href="/" className="navbar-text">
-            Home
-          </Link>
-          <Link href="/battles" className="navbar-text">
-            Battles
-          </Link>
-          <Link href="/settings" className="navbar-text">
-            Settings
-          </Link>
-        </div>
-        <div className="username-container">
-          <Link href="/profile" className="username-text">
-            Profile
-          </Link>
-        </div>
-        <div className="md:hidden flex items-center justify-end w-1/3">
+        
+        <div className=" flex items-center justify-end w-1/3">
             <button
               className="hamburger inline-flex items-center justify-center p-2 rounded-md 
               text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"

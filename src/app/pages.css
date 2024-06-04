@@ -3,8 +3,7 @@ body {
   width: 100vw;
   height: 100vh;
   background: 
-    linear-gradient(rgba(0, 0, 0, 0.9),rgba(0,0,0,0.9)), 
-    url('/grid.png');
+    url('/Gradient.png');
   background-size: cover;
   background-position: center;
   margin: 0;

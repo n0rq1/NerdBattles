@@ -5,7 +5,9 @@ export default function Profile(){
     return (
         <body>
             <div className="background">
-                <NavBar/>
+                <h1>
+                    settings
+                </h1>
             </div>
         </body>
 

@@ -1,85 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 .navbar {
-    background-color: rgb(57, 57, 57);
+    background-color: rgba(57, 57, 57, 0);
     display: flex;
     align-items: center;
     justify-content: center;
     height: 8vh;
     width: 100%;
-    outline-style: solid;
-    outline-color: rgb(136, 136, 136);
 }
 
-.logo-container{
+.logo-container {
     position: absolute;
     left: 5vw;
 }
 
-.logo{
-    color: rgb(214, 173, 252);
-    font-size: 30px;
+.logo {
+    color: rgb(237, 255, 77);
+    font-size: 20px;
     font-family: 'Inter';
 }
 
-.logo:hover{
+.logo:hover {
     cursor: pointer;
     opacity: 75%;
 }
 
-.navbar-text-container{
+.hamburger {
     position: absolute;
-    left: calc(5vw + 250px);
-    justify-content: space-between;
+    right: 5vw;
 }
 
-.navbar-text{
-    padding: 10px;
-    font-family: 'Inter', sans-serif;
-    color: rgb(255, 255, 255);
-    font-size: 20px;
-}
-
-.navbar-text:hover{
-    color:rgb(151, 217, 255);
-    cursor: pointer;
-}
-
-.special{
-    color:rgb(151, 217, 255);
-    cursor: pointer;
-    background-color: rgb(41, 41, 41);
-    border-radius: 20px;  
-}
-
-.username-container{
-    position: absolute;
-    right:5vw;
-    display:block;
-}
-
-.username-text{
-    color:white;
-    font-size: 20px;
-    font-family: 'Inter';
-}
-
-.username-text:hover{
-    color:rgb(151, 217, 255);
-}
-
-.hamburger{
-    position: absolute;
-    right:5vw;
-}
-
-.hamburger:focus{
+.hamburger:focus {
     outline: none;
     box-shadow: 0 0 0 2px;
     box-shadow: inset 0 0 0 2px;
 }
 
-.hamburger-text{
+.hamburger-text {
     font-family: 'Inter', sans-serif;
     color: rgb(255, 255, 255);
     font-size: calc(1.25vw + 1.25vh);
@@ -87,8 +44,8 @@
     font-weight: bold;
 }
 
-.hamburger-text:hover{
-    color:rgb(209, 3, 99);
+.hamburger-text:hover {
+    color: rgb(236, 255, 66);
     cursor: pointer;
     background-color: rgb(41, 41, 41);
     border-radius: 20px;
@@ -102,7 +59,7 @@
     width: 100%;
     z-index: 10;
 }
-  
+
 .hamburger-dropdown a {
     display: block;
     padding: 10px;
@@ -110,50 +67,7 @@
     text-decoration: none;
     color: white;
 }
-  
+
 .hamburger-dropdown a:hover {
     background-color: #444;
 }
-
-.navbar-text-container .navbar-text:not(:last-child) {
-    border-right: 1px solid rgb(136, 136, 136);
-    padding-right: 15px; 
-    margin-right: 15px;
-}
-
-@media only screen and (max-height: 700px) {
-    .navbar{
-        height: 70px;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    .navbar-text-container{
-        display: none;
-    }
-    .username-container{
-        display:none;
-    }
-}
-
-
-/*for iphone 14 pro max*/
-@media only screen and (max-width: 450px) {
-    .hamburger{
-        right:10vw;
-    }
-    .navbar{
-        width: 100%;
-        height: 60px;
-    }
-    .logo{
-        font-size: 20px;
-    }
-    .navbar-text-container{
-        display: none;
-    }
-    .username-container{
-        display: none;
-    }
-}
-

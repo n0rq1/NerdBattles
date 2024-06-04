@@ -1,5 +1,10 @@
 .input-field {
+    margin-top:5%;
     width: 50%;
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
+}
+
+.input-field-top{
+    margin-top: 15%;
 }

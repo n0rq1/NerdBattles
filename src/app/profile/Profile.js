@@ -3,9 +3,9 @@
 import "../pages.css";
 import "./profile.css";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
-import NavBar from "../navbar/navbar";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import NavBar from "../navbar/navbar";
 
 export default function Profile() {
     const [user, setUser] = useState(null);
@@ -14,7 +14,6 @@ export default function Profile() {
     const [error, setError] = useState(null);
 
     const supabase = createClientComponentClient();
-
     const router = useRouter();
 
     useEffect(() => {
@@ -60,182 +59,79 @@ export default function Profile() {
     return (
         <div>
             <NavBar/>
-            <div className="background">
-                <div className="profile-upper">
-                    <div className="page-body">
-                        <div className="profile-header">
-                            <img src="/defaultuser.png" className="profile-picture" alt="Profile" />
-                            <div className="profile-account-info">
-                                <a className="uname-text">
-                                    {user ? uname : "Login"}
-                                </a>
-                                <progress value={.50} className="progress-bar" />
-                                <a style={{ color: 'white' }}>
-                                    {userData ? userData.level : 0}
-                                </a>
-                                <div className="links-container">
-                                    <img
-                                        onClick={ () => window.location.href = userData.github_link }
-                                        src="/github.png"
-                                        className="links-icon"
-                                        alt="GitHub"
-                                    />
-                                    <img
-                                        onClick={() => window.location.href = userData.linkedin_link}
-                                        src="/linkedin.png"
-                                        className="links-icon"
-                                        alt="LinkedIn"
-                                    />
-                                    <img
-                                        onClick={() => window.location.href = userData.leetcode_link}
-                                        src="/leetcode.png"
-                                        className="links-icon"
-                                        alt="LeetCode"
-                                    />
-                                </div>
-                            </div>
-                            <img src="/pencil.svg" className="edit-icon mt-1" alt="Edit" />
-                            <button onClick={user ? handleSignOut : handleLogin } className="logout-button">
-                                <a className="button-text">
-                                    {user ? "Logout" : "Login"}
-                                </a>
-                            </button>
-                        </div>
-                        <div className="user-info-container mt-1">
-                            <div className="user-info">
-                                <img src="/location-pin.png" className="info-icons" alt="Location" />
-                                <a className="user-info-text" style={{ width: '250px' }}>
-                                    Location Here
-                                </a>
-                                <img src="/school.png" className="info-icons" alt="School" />
-                                <a className="user-info-text">
-                                    School Name Here
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="calendar-thing">
-                        <div className="profile-header">
-                            <a>
-                                Calendar Thing
-                            </a>
-                        </div>
-                        <div className="user-info-container gametype-parent mt-1">
-                            <div className="gametype-container">
-                                <a>
-                                    CODE
-                                </a>
-                            </div>
-                            <div className="gametype-container">
-                                <a>
-                                    DEBUG
-                                </a>
-                            </div>
-                            <div className="gametype-container">
-                                <a>
-                                    DECRYPT 
-                                </a>
-                            </div>
-                            <div className="gametype-container">
-                                <a>
-                                    TYPE
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+            <div className="profile-body">
+                <div className="profile-avatar">
+                    <img src="/midair.jpeg"/>
                 </div>
-                <div className="profile-lower">
-                    <div className="cards-container">
-                        <div className="card">
-                            <div className="card-header">
-                                <a className="card-header-text">
-                                    CODE BATTLES
-                                </a>
-                            </div>
-                            <div className="record-tracker-container">
-                                <a className="record-tracker">
-                                    Wins
-                                </a>
-                                <a style={{ fontSize: '15px', marginLeft: '1vw' }}>
-                                    {userData ? userData.code_wins : "N/A"}
-                                </a>
-                                <a className="record-tracker">
-                                    Losses
-                                </a>
-                                <a style={{ fontSize: '15px', marginLeft: '1vw' }}>
-                                    {userData ? userData.code_losses : "N/A"}
-                                </a>
-                            </div>
-                        </div>
-                        <div className="card">
-                            <div className="card-header">
-                                <a className="card-header-text">
-                                    DEBUGGER BATTLES
-                                </a>
-                            </div>
-                            <div className="record-tracker-container">
-                                <a className="record-tracker">
-                                    Wins
-                                </a>
-                                <a style={{ fontSize: '15px', marginLeft: '1vw' }}>
-                                    {userData ? userData.debug_wins : "N/A"}
-                                </a>
-                                <a className="record-tracker">
-                                    Losses
-                                </a>
-                                <a style={{ fontSize: '15px', marginLeft: '1vw' }}>
-                                    {userData ? userData.debug_losses : "N/A"}
-                                </a>
-                            </div>
-                        </div>
-                        <div className="card">
-                            <div className="card-header">
-                                <a className="card-header-text">
-                                    DECRYPT BATTLES
-                                </a>
-                            </div>
-                            <div className="record-tracker-container">
-                                <a className="record-tracker">
-                                    Wins 
-                                </a>
-                                <a style={{ fontSize: '15px', marginLeft: '1vw' }}>
-                                    {userData ? userData.decrypt_wins : "N/A"}
-                                </a>
-                                <a className="record-tracker">
-                                    Losses
-                                </a>
-                                <a style={{ fontSize: '15px', marginLeft: '1vw' }}>
-                                    {userData ? userData.decrypt_losses : "N/A"}
-                                </a>
-                            </div>
-                        </div>
-                        <div className="card">
-                            <div className="card-header">
-                                <a className="card-header-text">
-                                    TYPE BATTLES
-                                </a>
-                            </div>
-                            <div className="record-tracker-container">
-                                <a className="record-tracker">
-                                    Wins
-                                </a>
-                                <a style={{ fontSize: '15px', marginLeft: '1vw' }}>
-                                    {userData ? userData.type_wins : "N/A"}
-                                </a>
-                                <a className="record-tracker">
-                                    Losses
-                                </a>
-                                <a style={{ fontSize: '15px', marginLeft: '1vw' }}>
-                                    {userData ? userData.type_losses : "N/A"}
-                                </a>
-                                <a className="record-tracker">
-                                    Average WPM
-                                </a>
-                                <a style={{ fontSize: '15px', marginLeft: '1vw' }}>
-                                    69
-                                </a>
-                            </div>
-                        </div>
+                <div className="profile-username-container">
+                    <a className="profile-username">
+                        {user ? uname : "Login"}
+                    </a>
+                </div>
+                <div className="profile-username-container">
+                    <a className="profile-level">
+                        level {userData ? userData.level : "N/A"}
+                    </a>    
+                </div>
+                <div className="stats-container">
+                    <a className="profile-level mt-1">
+                        stats
+                    </a>
+                    <div className="box-1-container">
+                        <a className="box-1-wins mt-10">
+                            {userData ? userData.code_wins : "N/A"}
+                        </a>
+                        <a className="box-1-text">
+                            code battles won
+                        </a>
+                        <a className="box-1-wins mt-10">
+                            {userData ? userData.code_wins/userData.code_losses : "N/A"}
+                        </a>
+                        <a className="box-1-text">
+                            win/loss ratio
+                        </a>
+                    </div>
+                    <div className="box-1-container">
+                        <a className="box-1-wins mt-10">
+                            {userData ? userData.type_wins : "N/A"}
+                        </a>
+                        <a className="box-1-text">
+                            type battles won
+                        </a>
+                        <a className="box-1-wins mt-10">
+                            {userData ? userData.average_wpm : "N/A"}
+                        </a>
+                        <a className="box-1-text">
+                            average wpm
+                        </a>
+                    </div>
+                    <div className="box-1-container">
+                        <a className="box-1-wins mt-10">
+                            {userData ? userData.debug_wins : "N/A"}
+                        </a>
+                        <a className="box-1-text">
+                            debug battles won
+                        </a>
+                        <a className="box-1-wins mt-10">
+                            {userData ? userData.fastest_bug + "s" : "N/A"}
+                        </a>
+                        <a className="box-1-text">
+                            fastest bug found
+                        </a>
+                    </div>
+                    <div className="box-1-container">
+                        <a className="box-1-wins mt-10">
+                            {userData ? userData.decrypt_wins : "N/A"}
+                        </a>
+                        <a className="box-1-text">
+                            decrypt battles won
+                        </a>
+                        <a className="box-1-wins mt-10">
+                            {userData ? userData.fastest_decrypt + "s" : "N/A"}
+                        </a>
+                        <a className="box-1-text">
+                            fastest cipher broken
+                        </a>
                     </div>
                 </div>
             </div>

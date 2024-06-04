@@ -7,20 +7,20 @@ function InitModal({ email, username, password, onEmailChange, onUsernameChange,
         <div className="login-page">
             <div className="login-container">
                 <input
-                    className="input-field mt-20"
+                    className="input-field input-field-top"
                     placeholder="Email..."
                     value={email}
                     onChange={onEmailChange}
                 />
                 <input
-                    className="input-field mt-20"
+                    className="input-field"
                     placeholder="Username..."
                     type="username"
                     value={username}
                     onChange={onUsernameChange}
                 />
-                <input
-                    className="input-field mt-20"
+                <input 
+                    className="input-field"
                     placeholder="Password..."
                     type="password"
                     value={password}

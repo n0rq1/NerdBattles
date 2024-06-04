@@ -23,9 +23,9 @@ function ConfirmModal({ email, username, signUp }) {
                 />
                 <input
                     className="input-field mt-10"
-                    placeholder="GitHub Profile (Optional)..."
-                    value={githubLink}
-                    onChange={(e) => setGH(e.target.value)}
+                    placeholder="LeetCode Profile (Optional)..."
+                    value={leetcodeLink}
+                    onChange={(e) => setLC(e.target.value)}
                 />
                 <button
                     className="login-text login-button mt-3"
