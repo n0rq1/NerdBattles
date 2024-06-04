@@ -66,6 +66,14 @@ export default function NavBar() {
               )}              
             </button>
         </div>
+        {isClick && (
+        <div className="hamburger-dropdown">
+          <a href="/" className="drop-text">home</a> 
+          <a href="/battles" className="drop-text">battles</a>
+          <a href="/settings" className="drop-text">settings</a>
+          <a href="/profile" className="drop-text">profile</a>
+        </div>
+        )}
     </nav>
   </>
 );

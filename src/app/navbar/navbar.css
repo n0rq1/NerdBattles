@@ -27,47 +27,35 @@
 
 .hamburger {
     position: absolute;
-    right: 5vw;
-}
-
-.hamburger:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px;
-    box-shadow: inset 0 0 0 2px;
-}
-
-.hamburger-text {
-    font-family: 'Inter', sans-serif;
-    color: rgb(255, 255, 255);
-    font-size: calc(1.25vw + 1.25vh);
-    margin-left: calc(2vw);
-    font-weight: bold;
-}
-
-.hamburger-text:hover {
-    color: rgb(236, 255, 66);
-    cursor: pointer;
-    background-color: rgb(41, 41, 41);
-    border-radius: 20px;
+    right: 25px;
 }
 
 .hamburger-dropdown {
     position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: #333;
-    width: 100%;
-    z-index: 10;
+    top:8vh;
+    width:20%;
+    right:30px;
+    flex-direction: column;
+    display: flex;
+    align-items: end;
+    z-index: 100;
 }
 
-.hamburger-dropdown a {
-    display: block;
-    padding: 10px;
-    text-align: right;
-    text-decoration: none;
-    color: white;
+.drop-text{
+    color:white;
+    font-size: 30px;
+    font-weight: bolder;
+    margin-bottom:10px;
+    transition: color 0.3s ease;
 }
 
-.hamburger-dropdown a:hover {
-    background-color: #444;
+.drop-text:hover{
+    opacity: 50%; /* Darken the text color on hover */
+    cursor: pointer; 
+}
+
+@media only screen and (max-width: 624px) {
+    .logo{
+        color: rgb(47, 104, 201);
+    }
 }
