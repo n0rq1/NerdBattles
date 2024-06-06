@@ -8,14 +8,10 @@ import gsap from "gsap";
 
 export default function Home() {
     const comp = useRef(null);
-    const [showNavBar, setShowNavBar] = useState(false);
 
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
             const t1 = gsap.timeline({
-                onComplete: () => {
-                    setShowNavBar(true);
-                }
             });
             t1.from(["#title-1", "#title-2", "#title-3"], {
               opacity: 0,
@@ -31,10 +27,9 @@ export default function Home() {
         }, comp)
     
         return () => ctx.revert()
-      }, [setShowNavBar])
+      },)
     return (
         <div className="relative" ref={comp}>
-            {showNavBar && <NavBar/>}
         <div
           id="intro-slider"
           className="h-screen p-10 bg-black-0 absolute top-0 left-0 font-spaceGrotesk z-10 w-full flex flex-col gap-10 tracking-tight"
