@@ -19,7 +19,6 @@ export default function NavBar() {
   };
 
   return (
-    <>
       <nav className="navbar"> 
         <div className="logo-container">
           <a href="/" className="logo">
@@ -75,6 +74,5 @@ export default function NavBar() {
         </div>
         )}
     </nav>
-  </>
 );
 }

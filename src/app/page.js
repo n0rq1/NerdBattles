@@ -1,4 +1,5 @@
 "use client";
+import { useState } from 'react';
 import NavBar from "./navbar/navbar";
 import "./page.css";
 import Home from "./home/page";
@@ -8,10 +9,11 @@ import Settings from "./settings/page";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 const App = () => {
+  const [showNavBar, setShowNavBar] = useState(false);
   return (
     <body>
-      <NavBar/>
-      <Home/>
+      {showNavBar && <NavBar />}
+      <Home setShowNavBar={setShowNavBar}/>
     </body>
   );
 }

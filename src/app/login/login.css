@@ -4,10 +4,10 @@
 }
 
 .login-container {
-    box-shadow: 5px 5px 5px rgb(223, 223, 223);
+    box-shadow: 0px 1px 5px rgb(223, 223, 223);
     width: 40vw;
     height: 50vh;
-    background-color: rgb(36, 36, 36);
+    background-color: rgba(36, 36, 36, 0);
     position: absolute;
     top: 50%;
     left: 50%;

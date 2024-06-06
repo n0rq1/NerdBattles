@@ -61,7 +61,7 @@ export default function Profile() {
             <NavBar/>
             <div className="profile-body">
                 <div className="profile-avatar">
-                    <img src="/midair.jpeg"/>
+                    <img src ="/midair.jpeg"/>
                 </div>
                 <div className="profile-username-container">
                     <a className="profile-username">

@@ -1,15 +1,12 @@
 import "../pages.css";
 import NavBar from "../navbar/navbar"
+import Spline from '@splinetool/react-spline/next';
 
-export default function Profile(){
-    return (
-        <body>
-            <div className="background">
-                <h1>
-                    settings
-                </h1>
-            </div>
-        </body>
-
-    )
+export default function Home() {
+  return (
+    <body>
+    <NavBar/>
+    
+    </body>
+  );
 }

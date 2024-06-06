@@ -68,10 +68,11 @@ export default function Login() {
       <NavBar />
       <div className="login-page">
         <div className="login-container">
+          <h1 className="mt-10"> Welcome! </h1>
           <input
             style={{
               border: '1px solid black',
-              marginTop: '20%',
+              marginTop: '10%',
               width: '40%',
               color: 'black',
               backgroundColor: 'white'
