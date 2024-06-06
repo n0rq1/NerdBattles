@@ -9,11 +9,9 @@ import Settings from "./settings/page";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 const App = () => {
-  const [showNavBar, setShowNavBar] = useState(false);
   return (
     <body>
-      {showNavBar && <NavBar />}
-      <Home setShowNavBar={setShowNavBar}/>
+      <Home/>
     </body>
   );
 }
