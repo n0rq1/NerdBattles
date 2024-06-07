@@ -4,9 +4,10 @@ import Spline from '@splinetool/react-spline/next';
 
 export default function Home() {
   return (
-    <body>
-    <NavBar/>
-    
-    </body>
+    <div>
+      <h1>
+        Settings
+      </h1>
+    </div>
   );
 }

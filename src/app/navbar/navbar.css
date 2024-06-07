@@ -1,31 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-
-.navbar {
-    background-color: rgba(57, 57, 57, 0);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    height: 8vh;
-    width:80%;
-    margin-left:auto;
-    margin-right:auto;
-}
-
-.logo-container {
+.navbar{
     position: absolute;
-    left: 0px;
-}
-
-.logo {
-    color: rgb(237, 255, 77);
-    font-size: 20px;
-    font-family: 'Inter';
-}
-
-.logo:hover {
-    cursor: pointer;
-    opacity: 75%;
+    right: 50px;
+    top: 25px;
+    background: #000;
+    z-index: 100;
 }
 
 .hamburger {
@@ -45,79 +23,9 @@
 }
 
 .drop-text{
-    color:white;
+    color:rgb(255, 255, 255);
     font-size: 30px;
     font-weight: bolder;
     margin-bottom:10px;
     transition: color 0.50s ease;
-}
-
-.drop-text:hover .letter,
-.drop-text.play .letter{
-    transform: translateY(-100%);
-    opacity: 20%;
-}
-
-
-.drop-text .block:last-child{
-    color: var(--primary);
-}
-
-.drop-text .letter{
-    display:inline-block;
-    transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1);
-}
-
-.letter:nth-child(1){
-    transition-delay:0s;
-}
-
-.letter:nth-child(2){
-    transition-delay:0.03s;
-}
-
-.letter:nth-child(3){
-    transition-delay:0.06s;
-}
-
-.letter:nth-child(4){
-    transition-delay:0.09s;
-}
-
-.letter:nth-child(5){
-    transition-delay:0.12s;
-}
-.letter:nth-child(6){
-    transition-delay:0.15s;
-}
-.letter:nth-child(7){
-    transition-delay:0.18s;
-}
-.letter:nth-child(8){
-    transition-delay:0.21s;
-}
-.letter:nth-child(9){
-    transition-delay:0.24s;
-}
-.letter:nth-child(10){
-    transition-delay:0.27s;
-}
-.letter:nth-child(11){
-    transition-delay:0.30s;
-}
-.letter:nth-child(12){
-    transition-delay:0.33s;
-}
-.letter:nth-child(13){
-    transition-delay:0.36 s;
-}
-
-
-
-
-
-@media only screen and (max-width: 624px) {
-    .logo{
-        color: rgb(47, 104, 201);
-    }
 }

@@ -65,7 +65,7 @@ export default function Login() {
 
   return (
     <div>
-      <NavBar />
+      <NavBar/>
       <div className="login-page">
         <div className="login-container">
           <h1 className="mt-10"> Welcome! </h1>
