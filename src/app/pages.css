@@ -6,6 +6,7 @@ body, html {
   width: 100%;
   height: 100%;
   overflow: hidden; /* Prevent scrolling */
+  font-family: 'Inter', sans-serif;
 }
 
 .spline-background {
@@ -40,4 +41,23 @@ body{
   height: 230px;
   margin-top: 1vh;
   margin-left: 100px;
+}
+
+.logo-text{
+  font-family: monospace;
+  width: 150px;
+  color:white;
+  font-size:20px;
+}
+
+.logo-container{
+  position: absolute;
+  top: 10px;
+  left: 50px;
+  padding: 20px;
+}
+
+.logo-container:hover{
+  cursor: pointer;
+  opacity: 75%;
 }

@@ -3,23 +3,66 @@ import "./navbar.css";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function NavBar() {
   const [isClick, setIsClick] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
-
+  const [user, setUser] = useState(null);
+  const [username, setUsername] = useState(null);
+  const [error, setError] = useState(null);
   const supabase = createClientComponentClient();
+  const router = useRouter();
 
   useEffect(() => {
     setHasMounted(true);
   }, []);
 
+  useEffect(() => {
+    async function getUserID() {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user) {
+        setUser(user.id);
+      }
+    }
+    getUserID();
+  }, [supabase]);
+
+  useEffect(() => {
+    async function getUserInfo() {
+      if (user) {
+        const { data, error } = await supabase
+          .from('users')
+          .select()
+          .eq('uid', user);
+        if (error) {
+          setError(error);
+        }
+        if (data && data.length > 0) {
+          setUsername(data[0].username);
+        }
+      }
+    }
+    getUserInfo();
+  }, [user, supabase]);
+
   const toggleNavbar = () => {
     setIsClick(!isClick);
   };
 
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
+    router.push("/");
+    router.refresh();
+    setUser(null);
+  };
+
+  const handleLogin = () => {
+    router.push("/login");
+    router.refresh();
+  };
+
   if (!hasMounted) {
-    // Prevent rendering until the component has mounted to avoid hydration errors
     return null;
   }
 
@@ -68,6 +111,11 @@ export default function NavBar() {
           <Link href="/battles" className="drop-text">battles</Link>
           <Link href="/settings" className="drop-text">settings</Link>
           <Link href="/profile" className="drop-text">profile</Link>
+          {user ? (
+            <button onClick={handleSignOut} className="drop-text">logout</button>
+          ) : (
+            <button onClick={handleLogin} className="drop-text">login</button>
+          )}
         </div>
       )}
     </div>

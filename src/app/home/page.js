@@ -1,16 +1,23 @@
+"use client";
 import "../pages.css"; 
 import "./home.css";
 import Spline from '@splinetool/react-spline/next';
 import gsap from "gsap";  
 
+import Test from "./test";
+import { Canvas } from "@react-three/fiber";
+
 export default function Home() {
   return (
-    <div className="bg-image-wrapper">
-      <Spline
-        scene="https://prod.spline.design/7QG5CF4LfbZXdMLj/scene.splinecode" 
-      />
+    <div className="home-container">
+      <Canvas
+        camera={{
+        fov: 60,
+        position: [2.3, 1.5, 2.3],
+        }}
+      >
+        <Test/>
+      </Canvas>
     </div>
   );
 }
-
-

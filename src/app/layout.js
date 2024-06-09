@@ -14,11 +14,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Add any necessary head elements here */}
       </head>
       <body className={inter.className}>
+        <div className="logo-container">
+          <h1 className="logo-text">nerd battles</h1>
+        </div> 
         <div className="spline-background">
-          <Spline scene="https://prod.spline.design/7QG5CF4LfbZXdMLj/scene.splinecode" />
+          <Spline
+            scene="https://prod.spline.design/7QG5CF4LfbZXdMLj/scene.splinecode" 
+          />
         </div>
         <NavBar />
         <div className="content">
