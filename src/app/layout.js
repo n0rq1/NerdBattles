@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
           />
         </div>
         <NavBar />
-        <div className="content">
+        <div>
           {children}
         </div>
       </body>

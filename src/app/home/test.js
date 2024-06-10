@@ -14,7 +14,6 @@ export default function Test() {
     return (
         <>
           <ambientLight intensity={2} />
-          <OrbitControls enableZoom={false} />
           <ScrollControls pages={5} damping={0.25} factor={1}>
             <Overlay/>
           </ScrollControls>
