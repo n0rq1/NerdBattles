@@ -11,6 +11,7 @@ export default function Home() {
   return (
     <div className="home-container">
       <Canvas
+        className="canvas"
         camera={{
         fov: 60,
         position: [2.3, 1.5, 2.3],

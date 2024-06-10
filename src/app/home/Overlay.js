@@ -39,11 +39,11 @@ export const Overlay = () => {
   };
 
   useFrame(() => {
-    setOpacityFirstSection(1 - scroll.range(0, 1 / 3));
-    setOpacitySecondSection(scroll.curve(1 / 6, 1 / 4));
-    setOpacityThirdSection(scroll.curve(1 / 3, 1 / 2));
-    setOpacityFourthSection(scroll.curve(1 / 2, 1 / 3));
-    setOpacityLastSection(scroll.range(1 / 4, 1 / 3));
+    setOpacityFirstSection(1 - scroll.range(0, 0.25));
+    setOpacitySecondSection(scroll.curve(0.15, 0.35));
+    setOpacityThirdSection(scroll.curve(0.30, 0.50));
+    setOpacityFourthSection(scroll.curve(0.45, 0.65));
+    setOpacityLastSection(scroll.range(0.40, 0.80));
   });
 
   return (
