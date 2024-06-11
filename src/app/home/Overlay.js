@@ -43,7 +43,7 @@ export const Overlay = () => {
     setOpacitySecondSection(scroll.curve(0.15, 0.35));
     setOpacityThirdSection(scroll.curve(0.30, 0.50));
     setOpacityFourthSection(scroll.curve(0.45, 0.65));
-    setOpacityLastSection(scroll.range(0.40, 0.80));
+    setOpacityLastSection(scroll.range(0.40, 0.10));
   });
 
   return (
