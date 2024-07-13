@@ -7,7 +7,6 @@ import gsap from "gsap";
 import * as THREE from 'three';
 import { useEffect } from 'react';
 import { OrbitControls, useGLTF , ScrollControls } from '@react-three/drei'
-import { Office } from "./Office";
 import { Overlay } from "./Overlay";
 
 export default function Test() {

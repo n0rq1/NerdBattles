@@ -5,6 +5,7 @@ import Home from "./home/page";
 import Battles from "./battles/page";
 import Spline from '@splinetool/react-spline/next';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
+import { io } from "socket.io-client";
 
 const App = () => {
   return(
